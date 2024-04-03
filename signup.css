@@ -1,0 +1,83 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Anta&family=Ubuntu:ital,wght@0,300');
+* {
+  font-family: "Anta", sans-serif;
+  align-content: center;
+  box-sizing: content-box;
+}
+body {
+  background: #a8a8a8;
+  background-size: cover;
+  align-content: center;
+}
+h2 {
+  color: #fff;
+  margin: 5px;
+  border-color: #000000;
+  height: auto;
+  text-align: center;
+}
+div {
+  background: linear-gradient(
+    90deg,
+    rgb(0, 90, 5),
+    rgb(134, 191, 0),
+    rgb(0, 90, 5)
+  );
+  box-shadow: rgba(0, 11, 82, 0.24) 0px 10px 20px;
+  border-radius: 30px;
+  height: fit-content;
+  width: fit-content;
+  margin: auto;
+  padding: 10px;
+}
+form {
+  color: #fff;
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+input[type="checkbox"] {
+  padding: 10px;
+}
+
+button[type="submit"] {
+  background-color: #002aa6;
+  color: #fff;
+  border: none;
+  margin: 5px;
+  padding: 7px;
+  border-radius: 25px;
+  cursor: pointer;
+  float: right;
+}
+
+button[type="submit"]:hover {
+  background-color: #050064;
+}
+a {
+  color: #fff;
+}
+@media (max-width: 760px) {
+  .con1 {
+    width: 80%;
+    padding: 10px;
+  }
+  form {
+    width: 85%;
+  }
+}

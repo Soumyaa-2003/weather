@@ -1,0 +1,667 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Weather App Project JavaScript</title>
+    <link rel="stylesheet" href="weather.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/JavaScript" src="weather.js">
+    </script>
+  </head>
+  <body>
+    <div class="header">
+       <img src="weather_logo.png"><span><h1>SKY WATCH</h1></span>
+       <a href="signup.html">Subscribe</a>
+       
+    </div>
+    
+    <div class="navtab">
+        <ul class="navbar-menu">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+        </ul>
+    </div>   
+    
+    <div class="container">
+      <div class="weather-input">
+        <h3>Enter City Name</h3>
+        <form class="search-form" action="">
+            <input
+                class="city-input"
+                type="text"
+                placeholder="e.g. Delhi , London , Kolkata , .."
+            />
+            <button class="search-btn" type="submit" onclick="newForcast()">search</button>
+        <h3 class="city-info">City Name</h3> 
+        <div class="loc">
+            <button class="search-location" id="search-location" type="submit" onclick="getLocation()">Current Coordinate Weather</button>
+        </div> 
+        <div class="loc-city-info">
+            <h2 class="city-label">Cityname</h2>
+            <h3 class="info">condition</h3>
+            <h4 class="temp-label"><i class="material-icons">thermostat</i>Temperature  -°C</h4>
+            <h4 class="feel-label"><i class="material-icons">thermostat</i>Feel  -°C</h4>
+            <h4 class="wind-label">
+                <i class="material-icons">air</i> Wind  -kmph
+            </h4>
+            <h4 class="humidity-label">
+                <i class="material-icons">water_drop</i> Humidity -%
+            </h4>
+            <h4 class="pressure-label"><i class="material-icons">compress</i>Pressure  -kPa</h4>
+            <h4 class="visibility-label"><i class="material-icons">visibility</i>Visibility  -km</h4>
+          </div>
+      </div>
+      <div class="weather-data">
+        <div class="weather-data1">
+            <div class="current-weather">
+                <div class="details">
+                <h2 class="date-label11">DateLabel1</h2> 
+                <h2 class="dis11">condition</h2>
+                <h6 class="temp-label11"><i class="material-icons">thermostat</i>Temperature __°C</h6>
+                <h6 class="feel-label11"><i class="material-icons">thermostat</i>Temperature __°C</h6>
+                <h6 class="wind-label11">
+                    <i class="material-icons">air</i> Wind: __ kmph
+                </h6>
+                <h6 class="humidity-label11">
+                    <i class="material-icons">water_drop</i> Humidity: __%
+                </h6>
+                <h6 class="visibility-label11"><i class="material-icons">visibility</i>Visibility __km</h6>
+                </div>
+            </div>
+            <div class="days-forecast">
+                <h2>Next 21hour forcast</h2>
+                <ul class="weather-cards">
+                    <li class="card">
+                        <h3 class="date-label12">DateLabel2</h3>
+                        <h3 class="dis12">condition</h3>
+                        <h6 class="temp-label12">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label12">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label12">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label12"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label13">DateLabel3</h3>
+                        <h3 class="dis13">condition</h3>
+                        <h6 class="temp-label13">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label13">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label13">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label13"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label14">DateLabel4</h3>
+                        <h3 class="dis14">condition</h3>
+                        <h6 class="temp-label14">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label14">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label14">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label14"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label15">DateLabel5</h3>
+                        <h3 class="dis15">condition</h3>
+                        <h6 class="temp-label15">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label15">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label15">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label15"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label16">DateLabel6</h3>
+                        <h3 class="dis16">condition</h3>
+                        <h6 class="temp-label16">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label16">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label16">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label16"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label17">DateLabel7</h3>
+                        <h3 class="dis17">condition</h3>
+                        <h6 class="temp-label17">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label17">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label17">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label17"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label18">DateLabel8</h3>
+                        <h3 class="dis18">condition</h3>
+                        <h6 class="temp-label18">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label18">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label18">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label18"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="weather-data1">
+            <div class="current-weather">
+                <div class="details">
+                <h2 class="date-label21">DateLabel1</h2>
+                <h2 class="dis21">condition</h2> 
+                <h6 class="temp-label21"><i class="material-icons">thermostat</i>Temperature __°C</h6>
+                <h6 class="feel-label21"><i class="material-icons">thermostat</i>Temperature __°C</h6>
+                <h6 class="wind-label21">
+                    <i class="material-icons">air</i> Wind: __ kmph
+                </h6>
+                <h6 class="humidity-label21">
+                    <i class="material-icons">water_drop</i> Humidity: __%
+                </h6>
+                <h6 class="visibility-label21"><i class="material-icons">visibility</i>Visibility __km</h6>
+                </div>
+            </div>
+            <div class="days-forecast">
+                <h2>Next 21hour forcast</h2>
+                <ul class="weather-cards">
+                    <li class="card">
+                        <h3 class="date-label22">DateLabel2</h3>
+                        <h3 class="dis22">condition</h3>
+                        <h6 class="temp-label22">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label22">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label22">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label22"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label23">DateLabel3</h3>
+                        <h3 class="dis23">condition</h3>
+                        <h6 class="temp-label23">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label23">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label23">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label23"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label24">DateLabel4</h3>
+                        <h3 class="dis24">condition</h3>
+                        <h6 class="temp-label24">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label24">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label24">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label24"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label25">DateLabel5</h3>
+                        <h3 class="dis25">condition</h3>
+                        <h6 class="temp-label25">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label25">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label25">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label25"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label26">DateLabel6</h3>
+                        <h3 class="dis26">condition</h3>
+                        <h6 class="temp-label26">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label26">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label26">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label26"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label27">DateLabel7</h3>
+                        <h3 class="dis27">condition</h3>
+                        <h6 class="temp-label27">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label27">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label27">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label27"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label28">DateLabel8</h3>
+                        <h3 class="dis28">condition</h3>
+                        <h6 class="temp-label28">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label28">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label28">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label28"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="weather-data1">
+            <div class="current-weather">
+                <div class="details">
+                <h2 class="date-label31">DateLabel1</h2>
+                <h2 class="dis31">condition</h2> 
+                <h6 class="temp-label31"><i class="material-icons">thermostat</i>Temperature __°C</h6>
+                <h6 class="feel-label31"><i class="material-icons">thermostat</i>Temperature __°C</h6>
+                <h6 class="wind-label31">
+                    <i class="material-icons">air</i> Wind: __ kmph
+                </h6>
+                <h6 class="humidity-label31">
+                    <i class="material-icons">water_drop</i> Humidity: __%
+                </h6>
+                <h6 class="visibility-label31"><i class="material-icons">visibility</i>Visibility __km</h6>
+                </div>
+            </div>
+            <div class="days-forecast">
+                <h2>Next 21our forcast</h2>
+                <ul class="weather-cards">
+                    <li class="card">
+                        <h3 class="date-label32">DateLabel2</h3>
+                        <h3 class="dis32">condition</h3>
+                        <h6 class="temp-label32">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label32">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label32">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label32"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label33">DateLabel3</h3>
+                        <h3 class="dis33">condition</h3>
+                        <h6 class="temp-label33">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label33">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label33">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label33"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label34">DateLabel4</h3>
+                        <h3 class="dis34">condition</h3>
+                        <h6 class="temp-label34">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label34">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label34">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label34"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label35">DateLabel5</h3>
+                        <h3 class="dis35">condition</h3>
+                        <h6 class="temp-label35">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label35">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label35">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label35"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label36">DateLabel6</h3>
+                        <h3 class="dis36">condition</h3>
+                        <h6 class="temp-label36">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label36">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label36">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label36"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label37">DateLabel7</h3>
+                        <h3 class="dis37">condition</h3>
+                        <h6 class="temp-label37">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label37">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label37">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label37"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label38">DateLabel8</h3>
+                        <h3 class="dis38">condition</h3>
+                        <h6 class="temp-label38">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label38">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label38">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label38"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="weather-data1">
+            <div class="current-weather">
+                <div class="details">
+                <h2 class="date-label41">DateLabel1</h2> 
+                <h2 class="dis41">condition</h2>
+                <h6 class="temp-label41"><i class="material-icons">thermostat</i>Temperature __°C</h6>
+                <h6 class="feel-label41"><i class="material-icons">thermostat</i>Temperature __°C</h6>
+                <h6 class="wind-label41">
+                    <i class="material-icons">air</i> Wind: __ kmph
+                </h6>
+                <h6 class="humidity-label41">
+                    <i class="material-icons">water_drop</i> Humidity: __%
+                </h6>
+                <h6 class="visibility-label41"><i class="material-icons">visibility</i>Visibility __km</h6>
+                </div>
+            </div>
+            <div class="days-forecast">
+                <h2>Next 21hour forcast</h2>
+                <ul class="weather-cards">
+                    <li class="card">
+                        <h3 class="date-label42">DateLabel2</h3>
+                        <h3 class="dis42">condition</h3>
+                        <h6 class="temp-label42">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label42">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label42">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label42"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label43">DateLabel3</h3>
+                        <h3 class="dis43">condition</h3>
+                        <h6 class="temp-label43">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label43">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label43">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label43"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label44">DateLabel4</h3>
+                        <h3 class="dis44">condition</h3>
+                        <h6 class="temp-label44">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label44">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label44">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label44"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label45">DateLabel5</h3>
+                        <h3 class="dis45">condition</h3>
+                        <h6 class="temp-label45">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label45">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label45">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label45"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label46">DateLabel6</h3>
+                        <h3 class="dis46">condition</h3>
+                        <h6 class="temp-label46">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label46">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label46">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label46"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label47">DateLabel7</h3>
+                        <h3 class="dis47">condition</h3>
+                        <h6 class="temp-label47">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label47">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label47">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label47"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label48">DateLabel8</h3>
+                        <h3 class="dis48">condition</h3>
+                        <h6 class="temp-label48">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label48">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label48">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label48"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="weather-data1">
+            <div class="current-weather">
+                <div class="details">
+                <h2 class="date-label51">DateLabel1</h2> 
+                <h2 class="dis51">condition</h2>
+                <h6 class="temp-label51"><i class="material-icons">thermostat</i>Temperature __°C</h6>
+                <h6 class="feel-label51"><i class="material-icons">thermostat</i>Temperature __°C</h6>
+                <h6 class="wind-label51">
+                    <i class="material-icons">air</i> Wind: __ kmph
+                </h6>
+                <h6 class="humidity-label51">
+                    <i class="material-icons">water_drop</i> Humidity: __%
+                </h6>
+                <h6 class="visibility-label51"><i class="material-icons">visibility</i>Visibility __km</h6>
+                </div>
+            </div>
+            <div class="days-forecast">
+                <h2>Next 21hour forcast</h2>
+                <ul class="weather-cards">
+                    <li class="card">
+                        <h3 class="date-label52">DateLabel2</h3>
+                        <h3 class="dis52">condition</h3>
+                        <h6 class="temp-label52">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label52">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label52">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label52"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label53">DateLabel3</h3>
+                        <h3 class="dis53">condition</h3>
+                        <h6 class="temp-label53">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label53">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label53">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label53"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label54">DateLabel4</h3>
+                        <h3 class="dis54">condition</h3>
+                        <h6 class="temp-label54">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label54">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label54">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label54"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label55">DateLabel5</h3>
+                        <h3 class="dis55">condition</h3>
+                        <h6 class="temp-label55">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label55">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label55">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label55"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label56">DateLabel6</h3>
+                        <h3 class="dis56">condition</h3>
+                        <h6 class="temp-label56">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label56">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label56">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label56"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label57">DateLabel7</h3>
+                        <h3 class="dis57">condition</h3>
+                        <h6 class="temp-label57">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label57">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label57">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label57"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                    <li class="card">
+                        <h3 class="date-label58">DateLabel8</h3>
+                        <h3 class="dis58">condition</h3>
+                        <h6 class="temp-label58">
+                        <i class="material-icons">thermostat</i> Temp: __°C
+                        </h6>
+                        <h6 class="wind-label58">
+                        <i class="material-icons">air</i> Wind: __ kmph
+                        </h6>
+                        <h6 class="humidity-label58">
+                        <i class="material-icons">water_drop</i> Humidity: __%
+                        </h6>
+                        <h6 class="visibility-label58"><i class="material-icons">visibility</i>Visibility __km</h6>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>

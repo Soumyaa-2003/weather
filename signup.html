@@ -1,0 +1,42 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="signup.css" />
+    <title>SinUp Page</title>
+  </head>
+  <body>
+    
+    <div class="con1">
+      <h2 class="head">Register for upcoming feature</h2>
+      <form action="signin.php" method="post">
+        <label for="name">UserName:</label>
+        <input type="text" id="name" name="username" required />
+
+        <label for="tel">Mobile:</label>
+        <input type="tel" id="tel" name="mobile" maxlength="10" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="pass" maxlength="8" required />
+        <input type="checkbox" onclick="showPass()">Show Password</input>
+
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+    <script>
+      function showPass() {
+       var x = document.getElementById("password");
+       if (x.type === "password") {
+       x.type = "text";
+       } else {
+        x.type = "password";
+       }
+      } 
+    </script>
+  </body>
+</html>
+
+
+
